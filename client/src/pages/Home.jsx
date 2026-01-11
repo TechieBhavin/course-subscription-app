@@ -20,9 +20,14 @@ const Home = () => {
         </Link>
       </div>
 
-      <div className="course-grid">
+      <div className="course-grid"> 
         {courses.map((course) => (
           <div key={course._id} className="course-card">
+            <img
+    src={course.thumbnail}
+    alt={course.title}
+    className="course-thumbnail"
+  />
             <div className="card-header">
               <h3>{course.title}</h3>
               <span

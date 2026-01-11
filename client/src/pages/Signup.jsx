@@ -13,11 +13,11 @@ const Signup = () => {
 
     try {
       await axios.post("http://localhost:5006/auth/signup", {
-        name,
+        name,   
         email,
         password,
       });
-
+      
       alert("Signup successful. Please login.");
       navigate("/login");
     } catch (err) {

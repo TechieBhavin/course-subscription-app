@@ -5,6 +5,7 @@ const courseSchema = new mongoose.Schema({
   description: String,
   price: Number, // 0 = Free
   image: String,
+  thumbnail: String,
 });
 
 module.exports = mongoose.model("Course", courseSchema);

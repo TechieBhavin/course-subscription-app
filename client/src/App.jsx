@@ -5,6 +5,7 @@ import CourseDetail from "./pages/CourseDetail";
 import MyCourses from "./pages/MyCourses";
 import Signup from "./pages/Signup";
 
+
 const isAuthenticated = () => {
   return localStorage.getItem("token");
 };

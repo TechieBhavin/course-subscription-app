@@ -14,23 +14,39 @@ const MyCourses = () => {
       })
       .then((res) => {
         setCourses(res.data);
-      });
+      })
+      .catch(console.error);
   }, []);
 
   return (
-    <div style={{ padding: 40 }}>
-      <h2>My Courses</h2>
+    <div className="container">
+      <h2 className="page-title">My Courses</h2>
 
-      {courses.map((item) => (
-        <div key={item._id}>
-          <h3>{item.courseId.title}</h3>
-          <p>Price Paid: ₹{item.pricePaid}</p>
-          <p>
-            Subscribed At:{" "}
-            {new Date(item.subscribedAt).toLocaleDateString()}
-          </p>
+      {courses.length === 0 ? (
+        <p className="empty-text">You have not subscribed to any courses yet.</p>
+      ) : (
+        <div className="course-grid">
+          {courses.map((item) => (
+            <div className="course-card" key={item._id}>
+              <div className="card-header">
+                <h3>{item.courseId.title}</h3>
+                <span
+                  className={`price-badge ${
+                    item.pricePaid === 0 ? "free" : "paid"
+                  }`}
+                >
+                  {item.pricePaid === 0 ? "FREE" : `₹${item.pricePaid}`}
+                </span>
+              </div>
+
+              <p className="subscribed-date">
+                Subscribed on{" "}
+                {new Date(item.subscribedAt).toLocaleDateString()}
+              </p>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 };

@@ -12,33 +12,36 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container" style={{ padding: 40 }}>
-      <h2>All Courses</h2>
-      <Link to="/my-courses">My Courses</Link>
-      <hr />
+    <div className="container">
+      <div className="page-header">
+        <h2>All Courses</h2>
+        <Link className="nav-link" to="/my-courses">
+          My Courses
+        </Link>
+      </div>
 
       <div className="course-grid">
         {courses.map((course) => (
           <div key={course._id} className="course-card">
-            <h3>{course.title}</h3>
+            <div className="card-header">
+              <h3>{course.title}</h3>
+              <span
+                className={`price-badge ${
+                  course.price === 0 ? "free" : "paid"
+                }`}
+              >
+                {course.price === 0 ? "FREE" : `₹${course.price}`}
+              </span>
+            </div>
+
             <p>{course.description}</p>
-            <strong>{course.price === 0 ? "FREE" : `₹${course.price}`}</strong>
 
             <div className="card-actions">
-              <Link to={`/courses/${course._id}`}>View Details</Link>
+              <Link to={`/courses/${course._id}`}>View Details →</Link>
             </div>
           </div>
         ))}
       </div>
-
-      {/* {courses.map((course) => (
-        <div key={course._id} style={{ marginBottom: 20 }}>
-          <h3>{course.title}</h3>
-          <p>{course.description}</p>
-          <p>{course.price === 0 ? "FREE" : `₹${course.price}`}</p>
-          <Link to={`/courses/${course._id}`}>View Details</Link>
-        </div>
-      ))} */}
     </div>
   );
 };

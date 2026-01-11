@@ -60,3 +60,65 @@ button:disabled {
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
+.page-title {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.price-badge.free {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.price-badge.paid {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.subscribed-date {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.empty-text {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.course-card p {
+  margin: 10px 0;
+  color: #4b5563;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
+

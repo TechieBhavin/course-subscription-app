@@ -13,7 +13,8 @@ const app = express();
 const PORT = process.env.PORT || 5006;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRoutes);
 app.use("/courses", courseRoutes);

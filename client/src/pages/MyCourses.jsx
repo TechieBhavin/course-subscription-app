@@ -7,22 +7,24 @@ const MyCourses = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
- useEffect(() => {
+  useEffect(() => {
     if (!token) {
       navigate("/login");
       return;
     }
 
-    axios.get("http://localhost:5006/my-courses", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => {
-      setCourses(res.data);
-    });
+    axios
+      .get("http://localhost:5006/my-courses", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        setCourses(res.data);
+      });
   }, []);
 
-    const handleLogout = () => {
+  const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
@@ -31,14 +33,21 @@ const MyCourses = () => {
     <div className="container">
       <h2 className="page-title">My Courses</h2>
 
-        <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout}>Logout</button>
 
       {courses.length === 0 ? (
-        <p className="empty-text">You have not subscribed to any courses yet.</p>
+        <p className="empty-text">
+          You have not subscribed to any courses yet.
+        </p>
       ) : (
         <div className="course-grid">
           {courses.map((item) => (
             <div className="course-card" key={item._id}>
+              <img
+                src={item.courseId.thumbnail}
+                alt={item.courseId.title}
+                className="course-thumbnail"
+              />
               <div className="card-header">
                 <h3>{item.courseId.title}</h3>
                 <span
@@ -51,8 +60,7 @@ const MyCourses = () => {
               </div>
 
               <p className="subscribed-date">
-                Subscribed on{" "}
-                {new Date(item.subscribedAt).toLocaleDateString()}
+                Subscribed on {new Date(item.subscribedAt).toLocaleDateString()}
               </p>
             </div>
           ))}

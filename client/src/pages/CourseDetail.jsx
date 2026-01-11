@@ -40,6 +40,18 @@ const CourseDetail = () => {
 
   return (
     <div className="container course-details" style={{ padding: 40 }}>
+
+      <img
+  src={course.thumbnail}
+  alt={course.title}
+  style={{
+    width: "100%",
+    maxHeight: "280px",
+    objectFit: "cover",
+    borderRadius: "12px",
+    marginBottom: "20px",
+  }}
+/>
       <h2>{course.title}</h2>
       <p>{course.description}</p>
       <p>{course.price === 0 ? "FREE" : `₹${course.price}`}</p>

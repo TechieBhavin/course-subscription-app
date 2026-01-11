@@ -39,7 +39,7 @@ const CourseDetail = () => {
   if (!course) return <p>Loading...</p>;
 
   return (
-    <div style={{ padding: 40 }}>
+    <div className="container course-details" style={{ padding: 40 }}>
       <h2>{course.title}</h2>
       <p>{course.description}</p>
       <p>{course.price === 0 ? "FREE" : `₹${course.price}`}</p>

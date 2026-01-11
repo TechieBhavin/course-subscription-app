@@ -21,14 +21,14 @@ function App() {
 
       <Route
         path="/courses/:id"
-        element={isAuthenticated() ? <CourseDetail /> : <Navigate to="/login" />}
+        element={
+          isAuthenticated() ? <CourseDetail /> : <Navigate to="/login" />
+        }
       />
 
       <Route
         path="/my-courses"
         element={isAuthenticated() ? <MyCourses /> : <Navigate to="/login" />}
-
-        
       />
 
       <Route path="/signup" element={<Signup />} />

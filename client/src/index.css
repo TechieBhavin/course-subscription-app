@@ -120,5 +120,12 @@ button:disabled {
   transform: translateY(-2px);
   transition: 0.2s ease;
 }
-
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
 

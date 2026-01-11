@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import CourseDetail from "./pages/CourseDetail";
 import MyCourses from "./pages/MyCourses";
+import Signup from "./pages/Signup";
 
 const isAuthenticated = () => {
   return localStorage.getItem("token");
@@ -26,7 +27,11 @@ function App() {
       <Route
         path="/my-courses"
         element={isAuthenticated() ? <MyCourses /> : <Navigate to="/login" />}
+
+        
       />
+
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   );
 }

@@ -4,6 +4,23 @@ A full-stack course subscription application built as part of a technical assess
 Users can browse courses, login, subscribe to free/paid courses, and view their subscribed courses.
 
 ---
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Page](screenshots/login.png)
+
+### 📝 Signup Page
+![Signup Page](screenshots/signup.png)
+
+### 📚 All Courses
+![All Courses](screenshots/home.png)
+
+### 📖 Course Details
+![Course Details](screenshots/course-details.png)
+
+### 🎓 My Courses
+![My Courses](screenshots/my-courses.png)
+
 
 ## 🚀 Tech Stack
 
@@ -103,19 +120,3 @@ Real-world subscription logic
 Bhavin Patel
 GitHub: https://github.com/TechieBhavin
 
-## 📸 Screenshots
-
-### 🔐 Login Page
-![Login Page](screenshots/login.png)
-
-### 📝 Signup Page
-![Signup Page](screenshots/signup.png)
-
-### 📚 All Courses
-![All Courses](screenshots/home.png)
-
-### 📖 Course Details
-![Course Details](screenshots/course-details.png)
-
-### 🎓 My Courses
-![My Courses](screenshots/my-courses.png)
